@@ -6,12 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  hello = false;
-  array = [];
+ oddNumbers: number[] =[];
+ evenNumbers: number[] =[];
 
+ onStarting(firedNumber: number){
+    if(firedNumber % 2 === 0){
+      this.evenNumbers.push(firedNumber);
 
-  onClicking(){
-    this.hello = !this.hello;
-    this.array.push(this.array.length + 1);
+    }else{
+      this.oddNumbers.push(firedNumber);
+    }
   }
 }

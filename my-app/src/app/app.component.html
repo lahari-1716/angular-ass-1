@@ -1,21 +1,31 @@
+<li> create three new compponents: gameControl, odd an even</li>
+<li>game control component should have buttons to start and stop the game</li>
+<li>when starting the game the event should get emmited</li>
+<li>the event should be listenable from outside the component</li>
+<li>when stopping the game, no more events should get emmited</li>
+<li>a new odd component should get created for every odd number emitted, the same should happen for the event component</li>
+<li>simply output odd-number or even-number in the two components</li>
+<li>style the element holding your output text differently in both components</li>
 
-<li>Add a button which says "display details"</li>
-<li>add a paragraph with any content of your choice</li>
-<li>toggle the displaying of that paragraph with the button created in the first step</li>
-<li>log all the button clicks in an array and output that array below thw secret paragraph</li>
-<li>starting at the 5th log item, give all the future log items a blue background and white color</li>
 <hr>
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <button class="btn btn-primary" (click)="onClicking()">Display Details</button>
-      <p  *ngIf="hello">hey hello</p>
-      <div
-       *ngFor="let numbers of array" [ngStyle]="{backgroundColor: numbers >= 5? 'blue' :'transperent'}"
-        [ngClass]="{'colour': numbers >= 5}">{{numbers}}
-      </div>
-
+      <app-game-control (intervalFired)="onStarting($event)"></app-game-control>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
     </div>
   </div>
 </div>
