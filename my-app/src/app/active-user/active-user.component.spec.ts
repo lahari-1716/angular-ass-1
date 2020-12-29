@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EvenComponent } from './even.component';
+import { ActiveUserComponent } from './active-user.component';
 
-describe('EvenComponent', () => {
-  let component: EvenComponent;
-  let fixture: ComponentFixture<EvenComponent>;
+describe('ActiveUserComponent', () => {
+  let component: ActiveUserComponent;
+  let fixture: ComponentFixture<ActiveUserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EvenComponent ]
+      declarations: [ ActiveUserComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EvenComponent);
+    fixture = TestBed.createComponent(ActiveUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
