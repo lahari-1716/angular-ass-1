@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
-  username='';
+  hello = false;
+  array = [];
+
+
+  onClicking(){
+    this.hello = !this.hello;
+    this.array.push(this.array.length + 1);
+  }
 }
